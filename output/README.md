@@ -1,0 +1,1 @@
+Diese README-Datei ist nur vorhanden, damit git den Ordner erkennt und mit dem Repository synchronisiert :)
