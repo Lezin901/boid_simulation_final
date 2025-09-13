@@ -19,11 +19,11 @@ Falls dieses Verhalten nicht gewünscht ist, können die folgenden Zeilen aus de
 
 ### Variante 2: Manuelle Einrichtung des Docker-Containers
 
-Image neu aufbauen anhand von Dockerfile:
+Zuerst bauen wir das Image anhand des Dockerfiles auf:
 
 ```docker build -t boids_simulation .```
 
-Container erstellen und laufen lassen:
+Daraufhin erstellen wir einen zugehörigen Container und lassen diesen laufen:
 
 ```docker run --rm --name boids_simulation -p 9999:9999 --mount type=bind,source="$(pwd)",target=/home/jovyan -it boids_simulation jupyter lab --port=9999 --notebook-dir=/home/jovyan/```
 
@@ -33,12 +33,12 @@ Der Link zur Jupyter-Lab-Umgebung sollte daraufhin in der Konsole erscheinen.
 
 ## Starten der Simulation
 
-In der Jupyter-Lab-Umgebung sollte nun ein neues Terminal geöffnet werden. In diesem Terminal kann dann der folgende Befehl ausgeführt werden:
+In der Jupyter-Lab-Umgebung muss nun ein neues Terminal geöffnet werden. In diesem Terminal kann dann der folgende Befehl ausgeführt werden:
 
 ```python3 main.py```
 
 Daraufhin wird ein Schwarm von Boids simuliert. Das Ergebnis der Simulation ist eine .gif-Datei, die im Ordner ```output``` abgelegt wird.
 
-## Verändern der Schwarm-Konfiguration
+## Anpassung der Simulationsparameter
 
 Falls Verhaltens-Parameter für den Schwarm angepasst werden sollen (bspw. die Gewichtung der Verhaltensregeln), können dafür Konstanten in der ```config.py```-Datei angepasst werden. Die Simulation kann nach Änderungen der Parameter in der ```config.py```-Datei wieder ganz normal über den Befehl ```python3 main.py``` gestartet werden.
