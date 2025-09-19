@@ -25,11 +25,13 @@ Zuerst bauen wir das Image anhand des Dockerfiles auf:
 
 Daraufhin erstellen wir einen zugehörigen Container und lassen diesen laufen:
 
+Unter Unix:
 ```docker run --rm --name boids_simulation -p 9999:9999 --mount type=bind,source="$(pwd)",target=/home/jovyan -it boids_simulation jupyter lab --port=9999 --notebook-dir=/home/jovyan/```
 
+Unter Windows:
+```docker run --rm --name boids_simulation -p 9999:9999 --mount type=bind,source="%cd%",target=/home/jovyan -it boids_simulation jupyter lab --port=9999 --notebook-dir=/home/jovyan/```
+
 Der Link zur Jupyter-Lab-Umgebung sollte daraufhin in der Konsole erscheinen. 
-
-
 
 ## Starten der Simulation
 
